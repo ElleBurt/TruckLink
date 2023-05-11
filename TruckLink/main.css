@@ -1,56 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap');
+
 * {   padding: 0;   margin: 0; overflow-x: hidden;}
 
-#topper{
-  padding: 1rem;
-  width: 100%;
-  height: 20rem;
-  background-color: grey;
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  background-color: rgb(47, 47, 47);
+  
+}
+
+.div1 {
+  background: rgb(61, 61, 61);
+  margin-top: 200px;
+  margin-bottom: 20px;
+  height: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 90, 90);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.elem{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(41, 41, 41);
+}
+#splash{
+  background-image: url("/splash.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  width: 100%;
+  height: 100vh;
+  border-bottom: 0.5rem solid rgb(41, 41, 41);
+}
+#splash div{
+  float: right;
+  width: 50%;
+}
+#splash img#logo{
+  max-width: 100%;
+  min-width: 25%;
+  max-height:40%;
+  min-height:13%;
+  float: right;
+}
+#splash ul{
+  float: right;
+  padding: 5rem;
+  text-align: center;
+  margin-right: -40rem;
+  -webkit-animation: slide 0.75s forwards;
+  -webkit-animation-delay: 0.5s;
+  animation: slide 0.75s forwards;
+  animation-delay: 0.5s;
+  width: 60%;
+  height: 60%;
+}
+@-webkit-keyframes slide {
+  100% {margin-right: 0rem;}
+}
+
+@keyframes slide {
+  100% {margin-right: 0rem;}
+}
+.trucksPng{
+  width: 30%;
+  height: 30%;
+}
+#splash ul li{
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 
 #info{
   margin: 1rem;
-  padding: 1rem;
   height: 40rem;
-  background-color: grey;
   border-radius: 3rem;
+  background-image: url("/infoSplash.png") ;
+  background-size: 40rem;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+#infoText{
+  padding: 1rem;
+  float: right;
+  width: 55%;
 }
 
 #stats{
   margin: 1rem;
   padding: 1rem;
   height: 20rem;
-  background-color: grey;
   border-radius: 3rem;
   display: flex;
+}
+
+#graph{
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
 }
 
 #deliveryGraph{
   padding: 1rem;
   border-radius: 3rem;
   margin: 1rem;
-  background-color: grey;
-  width: 46%;
+  max-width: 100%;
+  min-width: 44%;
   height: 30rem;
-  display: inline-flex;
-  float: left;
 }
 
 #mileageGraph{
   padding: 1rem;
   border-radius: 3rem;
   margin: 1rem;
-  background-color: grey;
-  width: 46%;
+  max-width: 100%;
+  min-width: 44%;
   height: 30rem;
-  float: right;
-  display: inline-flex;
 }
 
+#liveData{
+  display: flex;
+}
 #liveTrack{
+  filter: drop-shadow(0 0 0.5rem rgb(220, 157, 20));
+  background-image: url("/splash.png");
   margin: 1rem;
   padding: 1rem;
-  height: 40rem;
-  background-color: grey;
+  background-size: 100rem;
+  height: 53em;
+  width: 75%;
+  border-radius: 3rem;
+}
+#livePlayerData{
+  overflow: hidden;
+  display: inline-block;
+  width: 40%;
+}
+#liveOnline{
+  filter: drop-shadow(0 0 0.5rem rgb(220, 157, 20));
+  margin: 1rem;
+  padding: 1rem;
+  height: 44%;
+  border-radius: 3rem;
+}
+#liveOnlineData{
+  filter: drop-shadow(0 0 0.5rem rgb(220, 157, 20));
+  margin: 1rem;
+  padding: 1rem;
+  height: 44%;
   border-radius: 3rem;
 }
 
@@ -58,13 +173,24 @@
   margin: 1rem;
   padding: 1rem;
   height: 40rem;
-  background-color: grey;
   border-radius: 3rem;
 }
 
 #partners{
   padding: 1rem;
-  width: 100%;
   height: 20rem;
-  background-color: grey;
+}
+
+@media only screen and (max-width: 1079px) {
+  #graph{
+    width: 100%;
+    display: inline-block;
+    justify-content: space-around;
+  }
+}
+
+@media screen and ( min-height: 1080px ) { 
+  #splash{
+    height: 50%;
+  }
 }
