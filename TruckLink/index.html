@@ -2,88 +2,146 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/ico.ico">
-    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="/images/webico.ico">
+    <link type="text/css" href="/css/main.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css"> v\:* {behavior:url(#default#VML);}
+      .olImageLoadError { display: none; }
+      .olControlNavToolbar div {display: block;width: 28px;height: 28px;top: 300px;left: 6px;background-color: white;position: relative;}
+    </style>
+    <script src="https://cdn.socket.io/4.1.3/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.5.0/ol-debug.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/3.9.0/ol.js" integrity="sha512-EwBe1jL9aM+AKDshLEpadPCAhPIY//lRhIzm69PdKwpAN3Y9/x68nJtT/Rfo95MPsHZ/i/0VMbjzWtZfM26lxQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/3.9.0/ol.css" integrity="sha512-rAwwD6utAk7YAjYA44dunMgk8SfnqOsWjsppyyRIpS7iapQ6vwdb6cJ4UlppueZOt7AlxBMnJhhskiDCQVc8HA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>TruckLink VTC</title>
   </head>
   <body>
+    <div class="modal LoginPrompt">
+      <p id="closeOut">&#10060;</p>
+      <div id="form">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
+    
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" id="password" required>
+        
+
+        <button type="submit" id="loginSubmit" name="submit">Login</button>
+
+        <label id="invalid">
+          <i class="ri-error-warning-fill"></i>
+          <b>Invalid Credentials</b>
+        </label>
+
+      </div>
+      
+    </div>
+    <div class="BGdim">
+
+    </div>
+    
+    
+    
+
     <div id="splash" class="elem">
       <div>
-        <img id="logo" src="/LOGO.png"/>
+        <p id="login">Login</p>
+        <img id="logo" src="\images\trucklink-logo.svg"/>
         <ul>
           <li><h1 class="listHeader">What we deliver</h1></li>
-          <li><h3>Single</h3><img class="trucksPng" src="/trucks/singleTrailer.png"/></li>
-          <li><h3>Tankers</h3><img class="trucksPng" src="/trucks/oilTrailer.png"/></li>
-          <li><h3>HCT</h3><img class="trucksPng" src="/trucks/HCTTrailer.png"/></li>
-          <li><h3>Boats</h3><img class="trucksPng" src="/trucks/boatTrailer.png"/></li>
+          <li><h3>Single</h3><img class="trucksPng" src="/images/trucks/singleTrailer.png"/></li>
+          <li><h3>Tankers</h3><img class="trucksPng" src="/images/trucks/oilTrailer.png"/></li>
+          <li><h3>HCT</h3><img class="trucksPng" src="/images/trucks/HCTTrailer.png"/></li>
+          <li><h3>Boats</h3><img class="trucksPng" src="/images/trucks/boatTrailer.png"/></li>
         </ul>
       </div>
       
       
     </div>
+    <div id="flexbox">
 
-    <div id="info" class="elem">
-      <div id="infoText">
-        <h1>Information</h1>
-        <br>
-        <h3>Our goal</h3>
-        <br>
-        <p>Here at Trucklink we promise to provide a fast, safe and reliable service to all companies. Our aim is to always strive towards
-          the best delivery standards possible while we link your point A to point B. Customer satisfaction is at the heart of all our 
-          operations; that's why we always keep our live data up to date - we wont hide anything from you. </p>
-        <br>
-        <h3>Where does Trucklink opperate?</h3> 
-        <br>
-        <p>Trucklinks origin is in the UK how ever that doesnt stop us from delivering all across the EU, if you can name it - we can reach it.</p>
-        <br>
-        <h3>Where can i apply?</h3>
-        <br>
-        <p>Trucklink is currently not recruiting.</p>
-      </div>  
-    </div>
-
-    <div id="stats" class="elem">
-      <p>stats</p>
-    </div>
-
-    <div id="graph">
-
-      <div id="deliveryGraph" class="elem">
-        <p>delivery Graph</p>
+      <div id="info" class="elem">
+        <img src="/images/infoSplash.png"/>
+        <div id="infoText">
+          <h1>Information</h1>
+          <br>
+          <h3>Our goal</h3>
+          <br>
+          <p>Here at Trucklink we promise to provide a fast, safe and reliable service to all companies. Our aim is to always strive towards
+            the best delivery standards possible while we link your point A to point B. Customer satisfaction is at the heart of all our 
+            operations; that's why we always keep our live data up to date - we wont hide anything from you. </p>
+          <br>
+          <h3>Where does Trucklink opperate?</h3> 
+          <br>
+          <p>Trucklinks origin is in the UK how ever that doesnt stop us from delivering all across the EU, if you can name it - we can reach it.</p>
+          <br>
+          <h3>Where can i apply?</h3>
+          <br>
+          <p>Trucklink is currently not recruiting.</p>
+          <br>
+          <h3> ⚠ Webpage still under development!</h3>
+        </div>  
       </div>
 
-      <div id="mileageGraph" class="elem">
-        <p>mileage Graph</p>
-      </div>
-
-    </div>
-
-    <div id="liveData">
-      <div id="liveTrack" class="elem">
-        <p>Live Positions</p>
-      </div>
-
-      <div id="livePlayerData">
-        <div id="liveOnline" class="elem">
-          <p>Live Online Players</p>
+      <div id="stats" class="elem">
+        
+        <div id = "DistanceStats">
+          <h1>Kilometers Covered</h1>
+          <h3 id = "KilometersValue">0</h3>
         </div>
 
-        <div id="liveOnlineData" class="elem">
-          <p>Selected Online Players data</p>
+        <div id = "DeliveryStats">
+          <h1>Deliveries Complete</h1>
+          <h3 id = "DeliveryValue">0</h3>
         </div>
 
       </div>
-    </div>
 
-    <div id="screenshots" class="elem">
-      <p>screenshots</p>
-    </div>
+      <div id="graph">
 
-    <div id="partners" class="elem">
-      <p>partners/footer</p>
-    </div>
+        <div id="deliveryGraph" class="elem">
+          <canvas id="deliveryGraphCanvas">
+          </canvas>
+        </div>
 
-    <script type="module" src="/main.js"></script>
+        <div id="mileageGraph" class="elem">
+          <canvas id="mileageGraphCanvas">
+          </canvas>
+        </div>
+
+      </div>
+
+      <div id="liveData">
+        <div id="allOffline">
+          <img src="/images/account-pin-circle-line.svg"/>
+          <p>No TruckLink members Active</p>
+        </div>
+        <div id="MapSupportStatus">
+          <p>⚠ Current Map un-supported. Map Co-ords will be slightly off!</p>
+        </div>
+        <div id="playerConnect">
+          <img src="/images/dashboard/alert.png"/>
+          <p>Example Connected!</p>
+        </div>
+        <img src="images/crosshair-2-line.svg" id="followButton"/>
+        <div id="map"></div>
+        <select name="playersOnline" id="playerId"></select>
+        
+      </div>
+
+      <div id="screenshots" class="elem">
+        <p>screenshots</p>
+      </div>
+
+      <div id="partners" class="elem">
+        <p>partners/footer</p>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.umd.js"></script>
+		<script type="application/javascript" src="/js/jquery-2.2.3.min.js"></script>
+    <script src="/js/jquery.fittext.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap');
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  overflow-x: hidden;
+  background-color: rgb(32, 30, 32);
+}
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 90, 90);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.elem{
+  color: white;
+  padding: 1vw;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(43, 39, 43);
+}
+
+#splash{
+  background-image: url("/images/splash2.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  width: 100%;
+  height: 100vh;
+  border-bottom: 0.5vw solid rgb(41, 41, 41);
+}
+#splash div{
+  float: right;
+  width: 50%;
+}
+#splash img#logo{
+  max-width: 60%;
+  min-width: 25%;
+  max-height:30%;
+  min-height:13%;
+  margin-top: 3vw;
+  float: right;
+}
+#splash ul{
+  float: right;
+  opacity: 0;
+  padding: 5vw;
+  text-align: center;
+  margin-right: -40vw;
+  -webkit-animation: slide 0.75s forwards;
+  -webkit-animation-delay: 1.5s;
+  animation: slide 0.75s forwards;
+  animation-delay: 1.5s;
+  width: 25vw;
+  height: 10vw;
+}
+@-webkit-keyframes slide {
+  30% {opacity: 1;}
+  100% {margin-right: 0vw;opacity: 1;}
+}
+
+@keyframes slide {
+  30% {opacity: 1;}
+  100% {margin-right: 0vw;opacity: 1;}
+}
+.trucksPng{
+  width: 30%;
+  height: 30%;
+}
+#splash ul li{
+  font-size: 1vw;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+#flexbox{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
+  padding: 1vw;
+  height: auto;
+}
+
+#info{
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 40vw;
+  width: 100%;
+}
+#info img{
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 50%;
+}
+#infoText{
+  z-index: 10;
+  position: absolute;
+  margin: 1vw;
+  height: calc(100% - 2vw);
+  overflow: auto;
+  right: 0;
+  width: 55%;
+}
+
+#stats{
+  height: 20vw;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#stats div{
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 48%;
+  height: 100%;
+}
+#stats div h1{
+  border-bottom:#fff dashed 0.2vw;
+  padding-bottom: 1vw;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+}
+#stats div h3{
+  font-size: 100%;
+  width: 100%;
+  height: 60%;
+  text-align: center;
+  justify-content: center;
+}
+
+#graph{
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+#deliveryGraph{
+  margin-right: 0.5vw;
+  width: calc(50% - 0.5vw);
+  height: 30vw;
+}
+
+#mileageGraph{
+  margin-left: 0.5vw;
+  width: calc(50% - 0.5vw);
+  height: 30vw;
+}
+
+#liveData{
+  height: 45vw;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+#map{
+  background-color: rgb(43, 39, 43);
+  padding: 0.2rem;
+  width: 100%;
+}
+#playerId{
+  position: absolute;
+  z-index: 999;
+  width: 25vw;
+  top: 1vw;
+  text-align: center;
+  font-family: 'poppins', sans-serif;
+  height: calc(2.5vw - 0.2rem);
+  max-height: 1.8rem;
+  border-radius: 1rem;
+}
+#allOffline{
+  position: absolute;
+  bottom: 1vw;
+  width: 25vw;
+  height: 4vw;
+  background-color: rgb(32, 30, 32);
+  font-family: 'poppins',sans-serif;
+  border: solid rgb(43, 39, 43);
+  justify-content: space-around;
+  padding: 1vw;
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-size: 1vw;
+  display: none;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1000;
+}
+
+#allOffline img{
+  width: 2vw;
+  height: 2vw;
+}
+
+
+#MapSupportStatus{
+  position: absolute;
+  bottom: 1vw;
+  width: 25vw;
+  height: 4vw;
+  background-color: rgb(32, 30, 32);
+  font-family: 'poppins',sans-serif;
+  border: solid rgb(43, 39, 43);
+  justify-content: space-around;
+  padding: 1vw;
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-size: 1vw;
+  display: none;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1000;
+}
+
+#screenshots{
+  height: 40vw;
+  width: 100%;
+}
+
+#partners{
+  height: 20vw;
+  width: 100%;
+}
+
+#loadmap{
+  position: absolute;
+  right: 1vw;
+  top: 1vw;
+  height: 2vw;
+  width: 2vw;
+}
+#loadmap:hover{
+  filter: brightness(40%);
+}
+
+
+#playerConnect{
+  position: absolute;
+  top: 0;
+  right:0;
+  width: 16vw;
+  height: 4vw;
+  background-color: rgb(32, 30, 32);
+  z-index: 999;
+  font-family: 'poppins',sans-serif;
+  border: solid rgb(43, 39, 43);
+  justify-content: space-around;
+  padding: 1vw;
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-size: 1vw;
+  animation: none;
+  display: none;
+  pointer-events: none;
+  opacity: 0.7;
+}
+#playerConnect img{
+  width: 2vw;
+  height: 2vw;
+}
+@keyframes alert {
+  0% {opacity: 0;}
+  25% {opacity: 0.7;}
+  75% {opacity: 0.7;}
+  100% {opacity: 0;}
+}
+
+#followButton{
+  position: absolute;
+  z-index: 1000;
+  top: 1vw;
+  left: 36.3vw;
+  width: 1.5vw;
+  height: 1.5vw;
+  min-height: 1.45rem;
+  min-width: 1.45rem;
+}
+#followButton:hover{
+ filter: grayscale(75%);
+}
+
+#login{
+  margin: 1vw;
+  margin-right: 2vw;
+  float: right;
+}
+#closeOut{
+  position: absolute;
+  right: 0;
+  margin-right: 0.5vw;
+  margin-top: 0.2vw;
+}
+#closeOut:hover{
+  filter: invert();
+}
+
+.LoginPrompt{
+  z-index: 2;
+  border-radius: 1vw;
+  color: #fff;
+  display: none;
+  top: 1vh;
+  right: 1vh;
+  border: #ff9000 0.3vw solid;
+  filter: drop-shadow(0 0 0.75vw #ff9000);
+  position: absolute;
+  width: 30vw;
+  height: auto;
+  background-color:rgb(47, 47, 47);
+}
+#form{
+  padding: 1vw;
+  display:inline-block;
+  width: auto;
+  height: auto;
+  font-family: 'poppins', sans-serif;
+}
+#form input,label,button{
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  height: 3rem;
+  width: 100%;
+  font-family: 'poppins', sans-serif;
+}
+
+#invalid{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  color: #EF4F4F;
+  border-radius: 0.5vw;
+  border: solid #EF4F4F 0.2vw;
+}
+
+.BGdim{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  opacity: 0.65;
+  pointer-events: none;
+  background-color: #181818;
+}
+
+@media only screen and (max-width: 1080px) {
+  #splash{
+    height: 30vh;
+  }
+}
+
+@media only screen and (max-height: 1400px) and (max-width: 1080px){
+  #splash{
+    height: 30vh;
+  }
+  #splash ul{
+    display: none;
+  }
+}

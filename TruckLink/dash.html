@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/webico.ico">
+    <link type="text/css" href="/css/dash.css" rel="stylesheet">
+    <meta http-equiv='imagetoolbar' content='no'/>
+    <title>TruckLink Dashboard</title>
+    <style type="text/css"> v\:* {behavior:url(#default#VML);}
+        #map { height: 100%; background-color: rgb(43, 39, 43)}
+        .olImageLoadError { display: none; }
+        .olControlNavToolbar div {display: block;width: 28px;height: 28px;top: 300px;left: 6px;background-color: white;position: relative;}
+    </style>
+    <script src="https://cdn.socket.io/4.1.3/socket.io.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.5.0/ol-debug.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/3.9.0/ol.js" integrity="sha512-EwBe1jL9aM+AKDshLEpadPCAhPIY//lRhIzm69PdKwpAN3Y9/x68nJtT/Rfo95MPsHZ/i/0VMbjzWtZfM26lxQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/3.9.0/ol.css" integrity="sha512-rAwwD6utAk7YAjYA44dunMgk8SfnqOsWjsppyyRIpS7iapQ6vwdb6cJ4UlppueZOt7AlxBMnJhhskiDCQVc8HA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  <body>
+    <div id="flexbox">
+        <div id="allOffline">
+            <img src="/images/account-pin-circle-line.svg"/>
+            <p>No TruckLink members Active</p>
+        </div>
+        <div id="playerConnect">
+            <img src="/images/dashboard/alert.png"/>
+            <p>Example Connected!</p>
+        </div>
+        <div id="mapContainer">
+            <div id="map"></div>
+        </div>
+
+        <div id="rightDash">
+            <select name="playersOnline" id="playerId"></select>
+            <img src="images/crosshair-2-line.svg" id="followButton"/>
+            <h1 class="eventHeader">Events<i class="ri-home-2-line homepage"></i></h1>
+            <ul id="eventList">
+            </ul>
+        </div>
+
+        <div id="bottomDash">
+            <div id="dashInfo" class="bottomDash">
+                <div class="pedals">
+                    <img class="pedal_img" src="/images/dashboard/pedal.png"/>
+                    <img class="pedal_img underlay" id="clutch" src="/images/dashboard/clutch.png"/>
+                    <img class="pedal_img underlay" id="brake" src="/images/dashboard/brake.png"/>
+                    <img class="pedal_img underlay" id="accelerate" src="/images/dashboard/accelerate.png"/>
+                </div>
+
+                <div class="lights">
+                    <img id="leftIndic_img" src="/images/dashboard/leftIndic.png"/>
+                    <img id="hazard_img" src="/images/dashboard/hazard.png"/>
+                    <img id="rightIndic_img" src="/images/dashboard/rightIndic.png"/>
+                </div>
+
+                <div class="wheel"><img id="wheel_img" src="/images/dashboard/steering-wheel.png"/></div>
+
+                <div id="guageContainer">
+                    <div class="speedgauge">
+                        <div class="gauge__body">
+                          <div class="gauge__fill"></div>
+                          <div class="gauge__cover">
+                            <div class="gauge__font">
+                                <p id="speed">0 kph</p>
+                                <p id="gear">Gear: 0</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+    
+                    <div class="fuelgauge">
+                        <div class="gauge__body">
+                          <div class="gauge__fill"></div>
+                          <div class="gauge__cover">
+                            <div class="gauge__font">
+                                <p id="FuelPercent">0 %</p>
+                                <p id="FuelRange">Range: 0 km</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="jobInfo" class="bottomDash">
+                <div id ="jobContainer">
+                    <h2>Current Job:</h2>
+                    <ul id="job-list"></ul>
+                    <ul id="job-list-info"></ul>
+                </div>
+            </div>
+            <div class="bottomDash">
+                <canvas id="speedGraph">
+                </canvas>
+            </div>
+            <div class="bottomDash">
+                <canvas id="damageGraph">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.umd.js"></script>
+    <script type="application/javascript" src="/js/jquery-2.2.3.min.js"></script>
+    <script type="module" src="js/dash.js"></script>
+</body>
+</html>
